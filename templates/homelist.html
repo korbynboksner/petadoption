@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+
+
+
+{%block content%}
+<h1>Pets</h1>
+<ul>
+    {% for pet in pets %}
+
+    <div>
+        <img src="{{pet.image_url}}" >
+        <a href="/pets/{{ pet.id }}">{{ pet.name }}</a>
+        <b>{{pet.available}}</b>
+    </div>
+    {% endfor %}
+</ul>
+
+
+<form action="/add" method="GET"> 
+    <button>Add New Pet</button></form>
+{%endblock%}
